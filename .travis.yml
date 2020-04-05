@@ -8,7 +8,8 @@ deploy:
   provider: s3
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
-  bucket: "arn:aws:s3:::rohandamani.com"
+  bucket: "rohandamani.com"
+  region: "us-west-1"
   skip_cleanup: true
   acl: public_read
   local_dir: public
