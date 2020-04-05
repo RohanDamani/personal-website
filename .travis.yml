@@ -10,5 +10,3 @@ deploy:
   secret_access_key: $AWS_SECRET
   bucket: "rohandamani.com"
   skip_cleanup: true
-  acl: public_read
-  local_dir: public
