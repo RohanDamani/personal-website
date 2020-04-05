@@ -3,7 +3,7 @@ before_script:
   - npm install -g gatsby
 node_js:
   - lts/*
-script: build
+script: gatsby build
 deploy:
   provider: s3
   access_key_id: $AWS_KEY
