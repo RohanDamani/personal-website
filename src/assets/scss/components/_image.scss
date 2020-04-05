@@ -68,8 +68,17 @@
 			margin: (_size(element-margin) * 1.25) 0;
 			width: 100%;
 
+			&.flex {
+				display: flex;
+				justify-content: space-around;
+			}
+
 			img {
 				width: 100%;
+				&.double {
+					width: 140px;
+					height: 140px;
+				}
 			}
 		}
 

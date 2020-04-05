@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import about from '../images/about.jpg'
+import awsLogo from '../images/aws-certified-logo.jpg'
+import reactLogo from '../images/react-logo.png'
+import sail from '../images/sail.jpg'
+import roventuresLogo from '../images/roventures-logo.svg'
+import resume from '../assets/resume.pdf'
 
 class Main extends React.Component {
   render() {
@@ -12,78 +15,19 @@ class Main extends React.Component {
         onClick={() => {
           this.props.onCloseArticle()
         }}
-      ></div>
+      />
     )
 
     return (
       <div
         ref={this.props.setWrapperRef}
         id="main"
-        style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
+        style={
+          this.props.timeout
+            ? { display: 'flex', fontSize: '1.2rem' }
+            : { display: 'none' }
+        }
       >
-        <article
-          id="intro"
-          className={`${this.props.article === 'intro' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <h2 className="major">Intro</h2>
-          <span className="image main">
-            <img src={pic01} alt="" />
-          </span>
-          <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
-          </p>
-          {close}
-        </article>
-
-        <article
-          id="work"
-          className={`${this.props.article === 'work' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <h2 className="major">Work</h2>
-          <span className="image main">
-            <img src={pic02} alt="" />
-          </span>
-          <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
-          </p>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-            tempus.
-          </p>
-          {close}
-        </article>
-
         <article
           id="about"
           className={`${this.props.article === 'about' ? 'active' : ''} ${
@@ -93,78 +37,175 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
+            <img src={about} alt="Motorbike in rice paddies" />
           </span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
+            <h3 style={{ display: 'inline' }}>Rohan</h3> is a software developer
+            with a disposition for travel. He was born in Spartanburg, South
+            Carolina with parents that have traveled the world.
+          </p>
+          <p>
+            After graduating college from Florida State University with a degree
+            in Multinational Business, Rohan moved to California - where the
+            real adventure began.
+          </p>
+          <p>
+            He learned how to sail, taught himself front end engineering, and
+            took a six month trip around the world.
+          </p>
+          <p>
+            These events have shaped Rohan's perspective and led to a life of
+            sailing, coding, learning, meditating, and traveling.
           </p>
           {close}
         </article>
 
         <article
-          id="contact"
-          className={`${this.props.article === 'contact' ? 'active' : ''} ${
+          id="sail"
+          className={`${this.props.article === 'sail' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Contact</h2>
-          <form method="post" action="#">
-            <div className="field half first">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div className="field half">
-              <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-            <ul className="actions">
-              <li>
-                <input type="submit" value="Send Message" className="special" />
-              </li>
-              <li>
-                <input type="reset" value="Reset" />
-              </li>
-            </ul>
-          </form>
-          <ul className="icons">
+          <h2 className="major">Sail</h2>
+          <span className="image main">
+            <img src={sail} alt="" />
+          </span>
+          <p>
+            Rohan is an ASA certified sailing instructor that has skippered
+            international bareboat charters in the BVIs, Croatia, and
+            Seychelles.
+          </p>
+          <p>
+            He is able to learn, train, and take frequent trips to Catalina as
+            an active member of{' '}
+            <a href="https://www.fairwind.org/" target="_blank">
+              <strong>Fairwind Yacht Club</strong>
+            </a>.
+          </p>
+          {close}
+        </article>
+
+        <article
+          id="tech"
+          className={`${this.props.article === 'tech' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">Tech</h2>
+          <span className="image main flex">
+            <img src={awsLogo} alt="Aws Certified" className="double" />
+            <img src={reactLogo} alt="Aws Certified" className="double" />
+          </span>
+          <h3>Lead React Developer - AWS Certified</h3>
+          <p>
+            Rohan specializes in React and AWS, building web apps that handle
+            complex data, forms, authentication, and digital streaming. Rohan
+            has led front end teams at companies such as Disney and Beachbody to
+            build UX focused mobile responsive applications.
+          </p>
+          <p>
+            This static web-app was built using React with Gatsby, deployed on
+            S3 with CloudFare and TravisCI.
+          </p>
+          {close}
+        </article>
+
+        <article
+          id="resume"
+          className={`${this.props.article === 'resume' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">Resume</h2>
+          <iframe src={resume} name="Resume" width="100%" height="700px" />
+          {close}
+        </article>
+
+        <article
+          id="connect"
+          className={`${this.props.article === 'connect' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">Connect</h2>
+          {/*<form method="post" action="#">*/}
+          {/*<div className="field half first">*/}
+          {/*<label htmlFor="name">Name</label>*/}
+          {/*<input type="text" name="name" id="name" />*/}
+          {/*</div>*/}
+          {/*<div className="field half">*/}
+          {/*<label htmlFor="email">Email</label>*/}
+          {/*<input type="text" name="email" id="email" />*/}
+          {/*</div>*/}
+          {/*<div className="field">*/}
+          {/*<label htmlFor="message">Message</label>*/}
+          {/*<textarea name="message" id="message" rows="4"></textarea>*/}
+          {/*</div>*/}
+          {/*<ul className="actions">*/}
+          {/*<li>*/}
+          {/*<input type="submit" value="Send Message" className="special" />*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*<input type="reset" value="Reset" />*/}
+          {/*</li>*/}
+          {/*</ul>*/}
+          {/*</form>*/}
+          <ul className="icons flex">
             <li>
               <a
-                href="https://twitter.com/HuntaroSan"
-                className="icon fa-twitter"
+                href="https://www.linkedin.com/in/rohandamani/"
+                className="icon fa-linkedin fa-2x large"
+                target="_blank"
               >
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
-                <span className="label">Instagram</span>
+                <span className="label">LinkedIn</span>
               </a>
             </li>
             <li>
               <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
-                className="icon fa-github"
+                href="https://github.com/rohandamani/"
+                className="icon fa-github fa-2x large"
+                target="_blank"
               >
                 <span className="label">GitHub</span>
               </a>
             </li>
+            <li>
+              <a
+                href="https://www.instagram.com/roventures/"
+                className="icon fa-instagram fa-2x large"
+                target="_blank"
+              >
+                <span className="label">Instagram</span>
+              </a>
+            </li>
           </ul>
+          {close}
+        </article>
+
+        <article
+          id="roventures"
+          className={`${this.props.article === 'roventures' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <a href="http://roventures.tv/" target="_blank">
+            <span className="image main">
+              <img src={roventuresLogo} alt="Roventures" height="150px" />
+            </span>
+          </a>
+          <p>
+            <a href="http://roventures.tv/" target="_blank">
+              Roventures
+            </a>{' '}
+            is a platform to share my knowledge and experience with photos and
+            videos from traveling. Next time, I'll bring my own sailboat and
+            some real cameras!
+          </p>
           {close}
         </article>
       </div>
