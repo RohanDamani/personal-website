@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - lts/*
+install: npm
+script: build
+deploy:
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: "rohandamani.com"
+  skip_cleanup: true
+  acl: public_read
+  local_dir: public
