@@ -107,7 +107,7 @@ class Main extends React.Component {
           </p>
           <p>
             This static web-app was built using React with Gatsby, deployed on
-            S3 with CloudFare and TravisCI.
+            S3 with CloudFront and Travis CI.
           </p>
           {close}
         </article>
