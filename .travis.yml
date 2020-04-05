@@ -1,7 +1,8 @@
 language: node_js
+before_script:
+  - npm install -g gatsby
 node_js:
   - lts/*
-install: npm
 script: build
 deploy:
   provider: s3
